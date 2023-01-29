@@ -1,0 +1,52 @@
+﻿<body style="padding-top: 10px">
+    <div class="col-xs-8 col-xs-offset-2">
+        <div class="panel-heading">
+            <h3>Employee Search Form</h3>
+        </div>
+        <form asp-controller="Trains" asp-action="DynamicSQL">
+            <div>
+                <label for="Name">Name</label>
+                <br />
+                <input type="text" name="Name" placeholder="Name" />
+            </div>
+            <br />
+            <div>
+                <label for="Speed">Speed</label>
+                <br />
+                <input type="text" name="Speed" placeholder="Speed" />
+            </div>
+            <br />
+            <div>
+                <label for="Seats">Seats</label>
+                <br />
+                 <input type="number" name="DynamicSQL" placeholder="DynamicSQL" />
+            </div>
+            <br />
+            <div>
+                <label for="Model">DynamicSQL</label>
+                <br />
+                <input type="number" name="DynamicSQL" placeholder="DynamicSQL" />
+            </div>
+            <br />
+            <input type="submit" value="DynamicSQL" />
+        </form>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Speed</th>
+                    <th scope="col">Seats</th>
+                </tr>
+            <tbody>
+                @foreach (var Train in Model)
+                {
+                    <tr>
+                        <td>@Train.Name</td>
+                        <td>@Train.Speed</td>
+                        <td>@Train.Seats</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
